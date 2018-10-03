@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { withStyles } from '@material-ui/core/styles';
 import classnames from 'classnames';
 import Card from '@material-ui/core/Card';
@@ -16,6 +15,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import InteractiveIcons from '../../UI/interactiveIcons'
 
 const styles = theme => ({
   card: {
@@ -55,7 +55,6 @@ class RecipeReviewCard extends React.Component {
 
   render() {
     const { classes } = this.props;
-
     return (
       <Card className={classes.card}>
         <CardHeader
@@ -80,13 +79,19 @@ class RecipeReviewCard extends React.Component {
           </Typography>
         </CardContent>
         <CardActions className={classes.actions} disableActionSpacing>
-          <IconButton aria-label="Add to favorites">
-            <FavoriteIcon />
+          <IconButton aria-label="like">
+          <InteractiveIcons>
+            <i class="material-icons">
+            favorite_border
+             </i>
+          </InteractiveIcons>
           </IconButton>
-          <IconButton aria-label="Share">
-            <ShareIcon />
+          <IconButton aria-label="comment">
+          <InteractiveIcons>
+            <i class="material-icons">mode_comment</i>
+          </InteractiveIcons>
           </IconButton>
-          
+
         </CardActions>
 
       </Card>

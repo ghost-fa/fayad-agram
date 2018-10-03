@@ -44,13 +44,7 @@ function SearchAppBar(props) {
           <Typography className={classes.title} variant="title" color="inherit" noWrap>
           Fayad Agram
           </Typography>
-          <div className={classes.grow} />
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-
-          </div>
+      
         </Toolbar>
       </AppBar>
     </div>
