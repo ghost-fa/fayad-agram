@@ -16,6 +16,8 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import InteractiveIcons from '../../UI/interactiveIcons'
+import { Link } from 'react-router-dom'
+
 
 const styles = theme => ({
   card: {
@@ -88,7 +90,7 @@ class RecipeReviewCard extends React.Component {
           </IconButton>
           <IconButton aria-label="comment">
           <InteractiveIcons>
-            <i class="material-icons">mode_comment</i>
+          <Link to='/view/commint'> <i class="material-icons">mode_comment</i></Link>
           </InteractiveIcons>
           </IconButton>
 

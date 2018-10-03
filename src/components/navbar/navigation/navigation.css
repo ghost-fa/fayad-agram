@@ -1,0 +1,16 @@
+.Nav{
+flex-grow: 1;
+  margin-left: 75px;
+display: flex;
+justify-content:flex-end;
+}
+.Nav .SubNav{
+  width: 100px;
+}
+.Nav .SubNav a{
+  text-decoration: none;
+  color:white;
+  font-size: 20px;
+
+
+}

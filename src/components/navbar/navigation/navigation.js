@@ -1,5 +1,4 @@
 import React from 'react';
-
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -9,6 +8,8 @@ import { fade } from '@material-ui/core/styles/colorManipulator';
 import { withStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
+import { Link } from 'react-router-dom'
+import './navigation.css'
 
 const styles = theme => ({
   root: {
@@ -31,12 +32,12 @@ const styles = theme => ({
       width: 'auto',
     },
 
-
 });
 
 function SearchAppBar(props) {
   const { classes } = props;
   return (
+
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
@@ -44,7 +45,12 @@ function SearchAppBar(props) {
           <Typography className={classes.title} variant="title" color="inherit" noWrap>
           Fayad Agram
           </Typography>
-      
+
+          <div className='Nav'>
+            <div className='SubNav'>
+      <Link to="/">home</Link>
+      </div>
+      </div>
         </Toolbar>
       </AppBar>
     </div>
