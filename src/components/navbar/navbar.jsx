@@ -1,7 +1,7 @@
 import React from 'react';
+import Navigation from './navigation/navigation'
 
-
-const navbar = (props) =>(<h1>hello navbar</h1>)
+const navbar = (props) =>(<Navigation />)
 
 
 

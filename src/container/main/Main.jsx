@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Main from '../../components/main/main'
-
+import './Main.css'
 class main extends Component{
   render(){
-    return(<Main />)
+    return(<div className="Main"><Main /></div>)
   }
 }
 

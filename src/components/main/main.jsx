@@ -1,7 +1,7 @@
 import React from 'react';
+import Paper from './paper/paper'
 
-
-const main = (props) =>(<h1>hello main</h1>)
+const main = (props) =>(<Paper />)
 
 
 
