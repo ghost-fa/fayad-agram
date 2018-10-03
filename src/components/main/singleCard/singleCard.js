@@ -16,8 +16,7 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import InteractiveIcons from '../../UI/interactiveIcons'
-import { Link } from 'react-router-dom';
-import './cards.css'
+
 
 
 const styles = theme => ({
@@ -81,28 +80,6 @@ class RecipeReviewCard extends React.Component {
             guests. Add 1 cup of frozen peas along with the mussels, if you like.
           </Typography>
         </CardContent>
-        <CardActions className={classes.actions} disableActionSpacing>
-          <IconButton aria-label="like">
-          <InteractiveIcons>
-            <i class="material-icons">
-            favorite_border
-             </i>
-          </InteractiveIcons>
-          </IconButton>
-          <div className="cardIcon">
-        <Link to='/view/commint'>
-          <IconButton aria-label="comment">
-          <InteractiveIcons>
-
-           <i class="material-icons">mode_comment</i>
-
-          </InteractiveIcons>
-
-          </IconButton>
-        </Link>
-          </div>
-
-        </CardActions>
 
       </Card>
     );
