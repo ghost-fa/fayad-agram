@@ -1,17 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {BrowserRouter} from 'react-router-dom'
-import './index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+import { createStore, applyMiddleware, compose } from "redux";
+import { Provider } from "react-redux";
+import "./index.css";
+import App from "./App";
+import reducer from "./store/reducers/reducers";
+import * as serviceWorker from "./serviceWorker";
+import thunk from "redux-thunk";
 
-import * as serviceWorker from './serviceWorker';
-const app=(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-)
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const Reducer = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
 
-ReactDOM.render(app, document.getElementById('root'));
+const app = (
+  <Provider store={Reducer}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>
+);
+
+ReactDOM.render(app, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
