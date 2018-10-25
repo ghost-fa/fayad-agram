@@ -11,9 +11,11 @@ const styles = theme => ({
     right: -15,
     // The border color match the background color.
     border: `2px solid ${
-      theme.palette.type === 'light' ? theme.palette.grey[200] : theme.palette.grey[900]
-    }`,
-  },
+      theme.palette.type === 'light'
+        ? theme.palette.grey[200]
+        : theme.palette.grey[900]
+    }`
+  }
 });
 
 function CustomizedBadge(props) {
@@ -21,13 +23,15 @@ function CustomizedBadge(props) {
 
   return (
     <IconButton aria-label="Cart">
-      <Badge badgeContent={4} color="primary" classes={{ badge: classes.badge }}>
+      <Badge
+        badgeContent={4}
+        color="primary"
+        classes={{ badge: classes.badge }}
+      >
         {props.children}
       </Badge>
     </IconButton>
   );
 }
-
-
 
 export default withStyles(styles)(CustomizedBadge);

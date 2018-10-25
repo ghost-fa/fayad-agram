@@ -1,13 +1,18 @@
 import * as actionTypes from './actionsTypes';
 
-export const addone = () => ({
+export const addlike = {
   type: actionTypes.ADD_LIKE
-});
+};
 
-export const addcomment = () => ({
-  type: actionTypes.ADD_COMMENT
-});
-
-export const deletcomment = () => ({
-  type: actionTypes.REMOVE_COMMENT
-});
+// export const addComment = (postId, author, comment) => ({
+//   type: actionTypes.ADD_COMMENT,
+//   postId: postId,
+//   author: author,
+//   comment: comment
+// });
+//
+// export const removeComment = (postId, i) => ({
+//   type: actionTypes.REMOVE_COMMENT,
+//   postId: postId,
+//   i
+// });

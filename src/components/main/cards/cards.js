@@ -15,38 +15,38 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import InteractiveIcons from '../../UI/interactiveIcons'
+import InteractiveIcons from '../../UI/interactiveIcons';
 import { Link } from 'react-router-dom';
-import './cards.css'
-
+import './cards.css';
+import PostData from '../../../data/post.js';
 
 const styles = theme => ({
   card: {
-    maxWidth: 400,
+    maxWidth: 400
   },
   media: {
     height: 0,
-    paddingTop: '56.25%', // 16:9
+    paddingTop: '56.25%' // 16:9
   },
   actions: {
-    display: 'flex',
+    display: 'flex'
   },
   expand: {
     transform: 'rotate(0deg)',
     transition: theme.transitions.create('transform', {
-      duration: theme.transitions.duration.shortest,
+      duration: theme.transitions.duration.shortest
     }),
     marginLeft: 'auto',
     [theme.breakpoints.up('sm')]: {
-      marginRight: -8,
-    },
+      marginRight: -8
+    }
   },
   expandOpen: {
-    transform: 'rotate(180deg)',
+    transform: 'rotate(180deg)'
   },
   avatar: {
-    backgroundColor: red[500],
-  },
+    backgroundColor: red[500]
+  }
 });
 
 class RecipeReviewCard extends React.Component {
@@ -60,15 +60,14 @@ class RecipeReviewCard extends React.Component {
     const { classes } = this.props;
     return (
       <Card className={classes.card}>
+        {PostData.map((post, i) => console.log(post))}
         <CardHeader
           avatar={
             <Avatar aria-label="Recipe" className={classes.avatar}>
               F
             </Avatar>
           }
-
           title="Shrimp and Chorizo Paella"
-
         />
         <CardMedia
           className={classes.media}
@@ -77,38 +76,30 @@ class RecipeReviewCard extends React.Component {
         />
         <CardContent>
           <Typography component="p">
-            This impressive paella is a perfect party dish and a fun meal to cook together with your
-            guests. Add 1 cup of frozen peas along with the mussels, if you like.
+            This impressive paella is a perfect party dish and a fun meal to
+            cook together with your guests. Add 1 cup of frozen peas along with
+            the mussels, if you like.
           </Typography>
         </CardContent>
         <CardActions className={classes.actions} disableActionSpacing>
           <IconButton aria-label="like">
-          <InteractiveIcons>
-            <i class="material-icons">
-            favorite_border
-             </i>
-          </InteractiveIcons>
+            <InteractiveIcons>
+              <i className="material-icons">favorite_border</i>
+            </InteractiveIcons>
           </IconButton>
           <div className="cardIcon">
-        <Link to='/view/commint'>
-          <IconButton aria-label="comment">
-          <InteractiveIcons>
-
-           <i class="material-icons">mode_comment</i>
-
-          </InteractiveIcons>
-
-          </IconButton>
-        </Link>
+            <Link to="/view/commint">
+              <IconButton aria-label="comment">
+                <InteractiveIcons>
+                  <i className="material-icons">mode_comment</i>
+                </InteractiveIcons>
+              </IconButton>
+            </Link>
           </div>
-
         </CardActions>
-
       </Card>
     );
   }
 }
-
-
 
 export default withStyles(styles)(RecipeReviewCard);
