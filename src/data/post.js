@@ -4,14 +4,14 @@ const posts = [
     caption: 'Lunch #hamont',
     likes: 56,
     id: '1',
-    display_src: '../../public/images/sky#.jpg'
+    display_src: '/images/sky#.jpg'
   },
   {
     code: 'BAcJeJrQca9',
     caption: 'Snow! ⛄️🌨❄️ #lifewithsnickers',
     likes: 59,
     id: '2',
-    display_src: '../../public/images/compuertr.jpg'
+    display_src: '/images/compuertr.jpg'
   },
   {
     code: 'BAF_KY4wcRY',
@@ -80,15 +80,6 @@ const posts = [
     id: '9',
     display_src:
       'https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/e35/12346073_1035047523184672_768982339_n.jpg'
-  },
-  {
-    code: '_rmvQfQce8',
-    caption:
-      'Just discovered the #hamont farmers market has a new ramen place! 🍜',
-    likes: 35,
-    id: '10',
-    display_src:
-      'https://scontent.cdninstagram.com/hphotos-xft1/t51.2885-15/e35/12331739_1671776806423597_995664526_n.jpg'
   }
 ];
 export default posts;

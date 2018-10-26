@@ -1,4 +1,4 @@
-import React, { Component, Fragmant } from 'react';
+import React, { Component } from 'react';
 import Navbar from './container/navbar/Navbar';
 import Main from './container/main/Main';
 import SingleCard from './container/SingleCard/SingleCard';

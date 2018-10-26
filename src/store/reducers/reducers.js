@@ -11,7 +11,6 @@ const reducer = (state = initState, action) => {
         like: state.like + 1
       };
 
-      break;
     default:
       return state;
   }
