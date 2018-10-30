@@ -41,7 +41,7 @@ const posts = [
     caption: 'Tacos for breakfast. I love you Austin. 🇺🇸',
     likes: 33,
     id: '6',
-    src: './images/brecfast.jpg'
+    src: '/images/brecfast.jpg'
   },
   {
     code: 'BAhvZrRwcfu',
@@ -56,7 +56,7 @@ const posts = [
     caption: "Brunchin'",
     likes: 40,
     id: '1152964002473690553',
-    src: './images/cokolata.jpg'
+    src: '/images/cokolata.jpg'
   },
   {
     code: '_4jHytwcUA',
@@ -64,14 +64,14 @@ const posts = [
       '2015 can be summed up with one baby and a many lines of code. 👶🏼⌨',
     likes: 62,
     id: '8',
-    src: './images/baby.jpg'
+    src: '/images/baby.jpg'
   },
   {
     code: '_zbaOlQcbn',
     caption: 'Lekker Chocoladeletter',
     likes: 52,
     id: '9',
-    src: './images/coffe.jpg'
+    src: '/images/coffe.jpg'
   }
 ];
 export default posts;

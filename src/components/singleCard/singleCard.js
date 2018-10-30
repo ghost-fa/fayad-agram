@@ -5,7 +5,7 @@ import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
-import IconButton from '@material-ui/core/IconButton';
+
 import Avatar from '@material-ui/core/Avatar';
 
 import Typography from '@material-ui/core/Typography';
@@ -51,7 +51,7 @@ class RecipeReviewCard extends React.Component {
 
   render() {
     const post = PostData[this.props.match.params.id];
-    console.log(post);
+
     const { classes } = this.props;
     return (
       <Card className={classes.card}>
@@ -70,21 +70,18 @@ class RecipeReviewCard extends React.Component {
         />
         <CardContent>
           <Typography component="p" />
-          welcome to here
+          {post.caption}
         </CardContent>
-        <IconButton aria-label="like">
-          <InteractiveIcons>
-            <i className="material-icons">favorite_border</i>
-          </InteractiveIcons>
-        </IconButton>
+
+        <InteractiveIcons>
+          <i className="material-icons">favorite_border</i>
+        </InteractiveIcons>
 
         <div className="cardIcon">
           <Link to="/view/commint">
-            <IconButton aria-label="comment">
-              <InteractiveIcons>
-                <i className="material-icons">mode_comment</i>
-              </InteractiveIcons>
-            </IconButton>
+            <InteractiveIcons>
+              <i className="material-icons">mode_comment</i>
+            </InteractiveIcons>
           </Link>
         </div>
       </Card>

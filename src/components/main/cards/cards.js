@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 
 import Card from '@material-ui/core/Card';
@@ -9,14 +9,14 @@ import CardActions from '@material-ui/core/CardActions';
 import Grid from '@material-ui/core/Grid';
 
 import Avatar from '@material-ui/core/Avatar';
-import IconButton from '@material-ui/core/IconButton';
+
 import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
 
 import InteractiveIcons from '../../UI/interactiveIcons';
 import { Link } from 'react-router-dom';
 import './cards.css';
-import PostData from '../../../data/post.js';
+// import PostData from '../../../data/post.js';
 
 const styles = theme => ({
   card: {
@@ -55,7 +55,6 @@ class RecipeReviewCard extends React.Component {
   };
 
   render() {
-    console.log(this.props.postData);
     const { classes } = this.props;
     return this.props.postData.map((post, i) => (
       <Grid lg={4} item>
@@ -67,7 +66,6 @@ class RecipeReviewCard extends React.Component {
                   F
                 </Avatar>
               }
-              // title={post.caption}
             />
 
             <CardMedia
@@ -79,18 +77,15 @@ class RecipeReviewCard extends React.Component {
               <Typography component="p">{post.caption}</Typography>
             </CardContent>
             <CardActions className={classes.actions} disableActionSpacing>
-              <IconButton aria-label="like">
-                <InteractiveIcons>
-                  <i className="material-icons">favorite_border</i>
-                </InteractiveIcons>
-              </IconButton>
+              <InteractiveIcons>
+                <i className="material-icons">favorite_border</i>
+              </InteractiveIcons>
+
               <div className="cardIcon">
                 <Link to={`/view/${i}`}>
-                  <IconButton aria-label="comment">
-                    <InteractiveIcons>
-                      <i className="material-icons">mode_comment</i>
-                    </InteractiveIcons>
-                  </IconButton>
+                  <InteractiveIcons>
+                    <i className="material-icons">mode_comment</i>
+                  </InteractiveIcons>
                 </Link>
               </div>
             </CardActions>
