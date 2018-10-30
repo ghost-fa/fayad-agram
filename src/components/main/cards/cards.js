@@ -6,6 +6,7 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
+import Grid from '@material-ui/core/Grid';
 
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
@@ -54,50 +55,49 @@ class RecipeReviewCard extends React.Component {
   };
 
   render() {
+    console.log(this.props.postData);
     const { classes } = this.props;
-    return (
-      <Fragment>
+    return this.props.postData.map((post, i) => (
+      <Grid lg={4} item>
         <Card className={classes.card}>
-          {PostData.map((post, i) => (
-            <div key={i}>
-              <CardHeader
-                avatar={
-                  <Avatar aria-label="Recipe" className={classes.avatar}>
-                    F
-                  </Avatar>
-                }
-                title="Shrimp and Chorizo Paella"
-              />
+          <div key={post.code}>
+            <CardHeader
+              avatar={
+                <Avatar aria-label="Recipe" className={classes.avatar}>
+                  F
+                </Avatar>
+              }
+              // title={post.caption}
+            />
 
-              <CardMedia
-                className={classes.media}
-                src={post.display_src}
-                title="Contemplative Reptile"
-              />
-              <CardContent>
-                <Typography component="p">{post.caption}</Typography>
-              </CardContent>
-              <CardActions className={classes.actions} disableActionSpacing>
-                <IconButton aria-label="like">
-                  <InteractiveIcons>
-                    <i className="material-icons">favorite_border</i>
-                  </InteractiveIcons>
-                </IconButton>
-                <div className="cardIcon">
-                  <Link to="/view/commint">
-                    <IconButton aria-label="comment">
-                      <InteractiveIcons>
-                        <i className="material-icons">mode_comment</i>
-                      </InteractiveIcons>
-                    </IconButton>
-                  </Link>
-                </div>
-              </CardActions>
-            </div>
-          ))}
+            <CardMedia
+              className={classes.media}
+              image={post.src}
+              title="Contemplative Reptile"
+            />
+            <CardContent>
+              <Typography component="p">{post.caption}</Typography>
+            </CardContent>
+            <CardActions className={classes.actions} disableActionSpacing>
+              <IconButton aria-label="like">
+                <InteractiveIcons>
+                  <i className="material-icons">favorite_border</i>
+                </InteractiveIcons>
+              </IconButton>
+              <div className="cardIcon">
+                <Link to={`/view/${i}`}>
+                  <IconButton aria-label="comment">
+                    <InteractiveIcons>
+                      <i className="material-icons">mode_comment</i>
+                    </InteractiveIcons>
+                  </IconButton>
+                </Link>
+              </div>
+            </CardActions>
+          </div>
         </Card>
-      </Fragment>
-    );
+      </Grid>
+    ));
   }
 }
 

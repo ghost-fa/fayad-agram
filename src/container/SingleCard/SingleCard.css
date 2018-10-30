@@ -1,5 +1,10 @@
-.singleCard{
+.singleCard {
   width: 90vw;
   margin: 20px auto;
+}
 
+input {
+  font-size: 30px;
+  float: right;
+  clear: ;
 }

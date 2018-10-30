@@ -11,7 +11,7 @@ class App extends Component {
         <Navbar />
         <Switch>
           <Route path="/" component={Main} exact />
-          <Route path="/view/commint" component={SingleCard} exact />
+          <Route path="/view/:id" component={SingleCard} exact />
         </Switch>
       </div>
     );

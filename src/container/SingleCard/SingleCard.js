@@ -5,15 +5,17 @@ import { connect } from 'react-redux';
 import * as actions from '../../store/actions/actions.js';
 class singleCard extends Component {
   render() {
+    const props = this.props;
     return (
       <div className="singleCard">
-        <SingleCard onClick={this.props.addlike} />
+        <SingleCard onClick={this.props.addlike} {...props} />
+        <input type="text" />
       </div>
     );
   }
 }
 
-export default connect(actions)(singleCard);
+export default singleCard;
 
 //
 //
