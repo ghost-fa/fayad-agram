@@ -1,19 +1,10 @@
 import * as actionTypes from '../actions/actionsTypes';
+import comments from './comments';
+import posts from './posts';
 
-const initState = {
-  like: 0
-};
-const reducer = (state = initState, action) => {
-  switch (action.type) {
-    case actionTypes.ADD_LIKE:
-      return {
-        ...state,
-        like: state.like + 1
-      };
+import { combineReducers } from 'redux';
 
-    default:
-      return state;
-  }
-};
-
-export default reducer;
+export default combineReducers({
+  comments,
+  posts
+});
