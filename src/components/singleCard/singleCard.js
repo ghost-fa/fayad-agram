@@ -7,14 +7,15 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import { connect } from 'react-redux';
 import { addComment, removeComment } from '../../store/actions/actions';
-import commentData from '../../data/comments';
 import Avatar from '@material-ui/core/Avatar';
-import postData from '../../data/post.js';
 import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
 // import InteractiveIcons from '../UI/interactiveIcons';
 import { Link } from 'react-router-dom';
-import PostData from '../../data/post.js';
+
+import postData from '../../data/post.js';
+import commentData from '../../data/comments';
+
 const styles = theme => ({
   card: {
     maxWidth: 850
@@ -62,7 +63,8 @@ class RecipeReviewCard extends React.Component {
 
   render() {
     const post = PostData[this.props.match.params.id];
-
+    const comet = commentData[this.props.match.params.id];
+    console.log(comet);
     const { classes } = this.props;
     return (
       <div>
