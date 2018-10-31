@@ -16,7 +16,6 @@ import { connect } from 'react-redux';
 // import InteractiveIcons from '../../UI/interactiveIcons';
 import { Link } from 'react-router-dom';
 import './cards.css';
-import postData from '../../../data/post.js';
 
 const styles = theme => ({
   card: {
