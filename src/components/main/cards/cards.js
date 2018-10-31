@@ -9,14 +9,14 @@ import CardActions from '@material-ui/core/CardActions';
 import Grid from '@material-ui/core/Grid';
 
 import Avatar from '@material-ui/core/Avatar';
-
+import { increment } from '../../../store/actions/actions';
 import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
-
-import InteractiveIcons from '../../UI/interactiveIcons';
+import { connect } from 'react-redux';
+// import InteractiveIcons from '../../UI/interactiveIcons';
 import { Link } from 'react-router-dom';
 import './cards.css';
-// import PostData from '../../../data/post.js';
+import postData from '../../../data/post.js';
 
 const styles = theme => ({
   card: {
@@ -56,7 +56,10 @@ class RecipeReviewCard extends React.Component {
 
   render() {
     const { classes } = this.props;
-    return this.props.postData.map((post, i) => (
+    const { increment } = this.props;
+    console.log(this.props);
+
+    return this.props.postData.map((post, idx) => (
       <Grid lg={4} item>
         <Card className={classes.card}>
           <div key={post.code}>
@@ -77,15 +80,19 @@ class RecipeReviewCard extends React.Component {
               <Typography component="p">{post.caption}</Typography>
             </CardContent>
             <CardActions className={classes.actions} disableActionSpacing>
-              <InteractiveIcons>
-                <i className="material-icons">favorite_border</i>
-              </InteractiveIcons>
+              <i
+                className="material-icons"
+                onClick={() => {
+                  this.props.increment(idx);
+                }}
+              >
+                favorite_border
+              </i>
+              {post.likes}
 
               <div className="cardIcon">
-                <Link to={`/view/${i}`}>
-                  <InteractiveIcons>
-                    <i className="material-icons">mode_comment</i>
-                  </InteractiveIcons>
+                <Link to={`/view/${idx}`}>
+                  <i className="material-icons">mode_comment</i>
                 </Link>
               </div>
             </CardActions>
@@ -96,4 +103,17 @@ class RecipeReviewCard extends React.Component {
   }
 }
 
-export default withStyles(styles)(RecipeReviewCard);
+const storToProps = store => {
+  return {
+    postData: store.posts
+  };
+};
+const actionToProps = {
+  increment: increment
+};
+
+const respewithStyle = withStyles(styles)(RecipeReviewCard);
+export default connect(
+  storToProps,
+  actionToProps
+)(respewithStyle);

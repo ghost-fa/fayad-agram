@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Navbar from './container/navbar/Navbar';
-import Main from './container/main/Main';
-import SingleCard from './container/SingleCard/SingleCard';
+import Navbar from './components/navbar/navbar';
+import Main from './components/main/main';
+import SingleCard from './components/singleCard/singleCard';
 import { Switch, Route } from 'react-router-dom';
+
 // import * as actions from './store/action/like';
 class App extends Component {
   render() {
