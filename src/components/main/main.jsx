@@ -1,8 +1,6 @@
 import React from 'react';
-import Paper from './paper/paper'
+import Paper from './paper/paper';
 
-const main = (props) =>(<Paper />)
+const Main = props => <Paper />;
 
-
-
-export default main
+export default Main;
